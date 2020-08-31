@@ -10,17 +10,17 @@ import (
 	"reflect"
 	"strings"
 
+	"github.com/conku/admin"
+	"github.com/conku/media"
+	"github.com/conku/media/oss"
+	"github.com/conku/qor"
+	"github.com/conku/qor/resource"
+	"github.com/conku/qor/utils"
 	"github.com/jinzhu/gorm"
-	"github.com/qor/admin"
-	"github.com/qor/media"
-	"github.com/qor/media/oss"
-	"github.com/qor/qor"
-	"github.com/qor/qor/resource"
-	"github.com/qor/qor/utils"
 )
 
 func init() {
-	admin.RegisterViewPath("github.com/qor/media/media_library/views")
+	admin.RegisterViewPath("github.com/conku/media/media_library/views")
 }
 
 type MediaLibraryInterface interface {

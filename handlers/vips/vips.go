@@ -7,8 +7,8 @@ import (
 	"path"
 	"strings"
 
+	"github.com/conku/media"
 	"github.com/disintegration/imaging"
-	"github.com/qor/media"
 	"github.com/theplant/bimg"
 )
 
