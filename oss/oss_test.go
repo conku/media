@@ -14,12 +14,12 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/conku/gorm"
 	"github.com/conku/media"
 	"github.com/conku/media/oss"
 	"github.com/conku/oss/s3"
 	"github.com/conku/qor/test/utils"
 	"github.com/jinzhu/configor"
-	"github.com/jinzhu/gorm"
 )
 
 var (

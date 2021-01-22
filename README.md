@@ -1,6 +1,6 @@
 ## Media Library
 
-Media is a [Golang](http://golang.org/) library that supports the upload of *files*/*images*/*videos* to a filesystem or cloud storage as well as *linked videos* (i.e. YouTube, Vimeo, etc.). The plugin includes:
+Media is a [Golang](http://golang.org/) library that supports the upload of _files_/_images_/_videos_ to a filesystem or cloud storage as well as _linked videos_ (i.e. YouTube, Vimeo, etc.). The plugin includes:
 
 - cropping and resizing features for images.
 - optional multiple sizes for each media resource.
@@ -10,25 +10,23 @@ Media is a [Golang](http://golang.org/) library that supports the upload of *fil
 
 ###### File Types
 
-Media accepts any and every file type, yet it associates certain file types as *images* or *videos* so as to provide helpers supporting those media's specific needs.
-
+Media accepts any and every file type, yet it associates certain file types as _images_ or _videos_ so as to provide helpers supporting those media's specific needs.
 
     Images: .jpg, .jpeg, .png, .tif, .tiff, .bmp, .gif
 
     Videos: .mp4, .m4p, .m4v, .m4v, .mov, .mpeg, .webm, .avi, .ogg, .ogv
 
-
 ## Usage
 
-Media depends on [GORM](https://github.com/jinzhu/gorm) models as it is using [GORM](https://github.com/jinzhu/gorm)'s callbacks to handle file processing, so you will need to register callbacks first:
+Media depends on [GORM](https://github.com/conku/gorm) models as it is using [GORM](https://github.com/conku/gorm)'s callbacks to handle file processing, so you will need to register callbacks first:
 
 ```go
 import (
-  "github.com/jinzhu/gorm"
+  "github.com/conku/gorm"
   "github.com/conku/media"
 )
 
-DB, err = gorm.Open("sqlite3", "demo_db") // [gorm](https://github.com/jinzhu/gorm)
+DB, err = gorm.Open("sqlite3", "demo_db") // [gorm](https://github.com/conku/gorm)
 
 media.RegisterCallbacks(DB)
 ```
@@ -37,7 +35,7 @@ Then add [OSS(Object Storage Service)](https://github.com/conku/oss) to your mod
 
 ```go
 import (
-  "github.com/jinzhu/gorm"
+  "github.com/conku/gorm"
   "github.com/conku/media/oss"
 )
 
@@ -101,7 +99,7 @@ You can implement the `GetSizes` function to predefine image sizes. The size nam
 ```go
 import (
   "github.com/conku/media/oss"
-  "github.com/jinzhu/gorm"
+  "github.com/conku/gorm"
 )
 
 type Product struct {
@@ -137,6 +135,7 @@ product.Image.URL("big@ld")
 You can also setup a media library, not use oss.OSS in model directly, then you can choose file from media library.
 
 setup a media library
+
 ```
 import(
 "github.com/conku/admin"
@@ -153,6 +152,7 @@ media.RegisterCallbacks(db)
 ```
 
 use media box in model
+
 ```
 import(
 "github.com/conku/media/media_library"
@@ -175,7 +175,6 @@ type Product struct {
 	}})
 
 ```
-
 
 ### Set file storage path in the file system
 
@@ -216,10 +215,10 @@ for _, path := range []string{"system", "javascripts", "stylesheets", "images"} 
 
 Media Library has some features aimed at helping achieve Accessibile frontends:
 
-- capture of a textual description for *images*, *videos*, and *linked videos* to aid with Accessibility.
-- capture of textual transcript for *videos* and *linked videos* to aid with Accessibility.
+- capture of a textual description for _images_, _videos_, and _linked videos_ to aid with Accessibility.
+- capture of textual transcript for _videos_ and _linked videos_ to aid with Accessibility.
 
-The values captured are fed into the sub-templates for each media type to be used if/where necessary. For example, an *image*'s HTML output (an `img` tag) manifests the textual description within an `alt` attribute while a video's HTML (an `iframe` tag) manifests the textual description within a `title` attribute.
+The values captured are fed into the sub-templates for each media type to be used if/where necessary. For example, an _image_'s HTML output (an `img` tag) manifests the textual description within an `alt` attribute while a video's HTML (an `iframe` tag) manifests the textual description within a `title` attribute.
 
 ## License
 
