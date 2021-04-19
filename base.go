@@ -19,11 +19,11 @@ import (
 
 	"github.com/conku/admin"
 	"github.com/conku/gorm"
+	"github.com/conku/inflection"
 	"github.com/conku/qor"
 	"github.com/conku/qor/resource"
 	"github.com/conku/qor/utils"
 	"github.com/gosimple/slug"
-	"github.com/jinzhu/inflection"
 )
 
 // CropOption includes crop options
