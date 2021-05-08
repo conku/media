@@ -75,7 +75,7 @@ func init() {
 }
 
 func TestURLWithoutFile(t *testing.T) {
-	user := User{Name: "jinzhu"}
+	user := User{Name: "conku"}
 
 	if got, want := user.Avatar.URL(), ""; got != want {
 		t.Errorf(`media.Base#URL() == %q, want %q`, got, want)
@@ -111,7 +111,7 @@ func getFile(filePath string) (*os.File, bool) {
 
 func TestURLWithFile(t *testing.T) {
 	var filePath string
-	user := User{Name: "jinzhu"}
+	user := User{Name: "conku"}
 
 	if avatar, err := os.Open("test/logo.png"); err != nil {
 		panic("file doesn't exist")
@@ -144,7 +144,7 @@ func TestURLWithFile(t *testing.T) {
 }
 
 func TestSaveIntoOSS(t *testing.T) {
-	var user = User{Name: "jinzhu"}
+	var user = User{Name: "conku"}
 	if avatar, err := os.Open("test/logo.png"); err == nil {
 		avatarStat, _ := avatar.Stat()
 		user.Avatar.Scan(avatar)
@@ -191,7 +191,7 @@ func TestSaveIntoOSS(t *testing.T) {
 }
 
 func TestSaveGifIntoOSS(t *testing.T) {
-	var user = User{Name: "jinzhu"}
+	var user = User{Name: "conku"}
 	if avatar, err := os.Open("test/test.gif"); err == nil {
 		avatarStat, _ := avatar.Stat()
 		var frames int
@@ -252,7 +252,7 @@ func TestSaveGifIntoOSS(t *testing.T) {
 }
 
 func TestCropFileWithSameName(t *testing.T) {
-	var user = User{Name: "jinzhu"}
+	var user = User{Name: "conku"}
 	if avatar, err := os.Open("test/logo.png"); err == nil {
 		avatarStat, _ := avatar.Stat()
 		user.Avatar2.Scan(avatar)
